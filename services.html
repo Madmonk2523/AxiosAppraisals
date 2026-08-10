@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Axios Appraisals</title>
+    <meta name="description" content="Professional appraisal solutions for estates, divorce, private property planning, and attorney-supported matters." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-white text-slate-700">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="logo.jpg" alt="Axios Appraisals logo" class="h-12 w-12 rounded-full object-cover shadow" />
+          <div>
+            <p class="text-lg font-extrabold text-[#0f2040]">Axios Appraisals</p>
+            <p class="text-[10px] uppercase tracking-[0.3em] text-[#c8962f]">Precision, clarity, confidence</p>
+          </div>
+        </a>
+        <nav class="hidden items-center gap-7 md:flex">
+          <a href="index.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Home</a>
+          <a href="services.html" class="nav-link active text-sm font-semibold text-[#0f2040]">Services</a>
+          <a href="attorneys.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Attorneys</a>
+          <a href="about.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">About</a>
+          <a href="contact.html" class="btn-primary rounded-full bg-[#0f2040] px-5 py-2.5 text-sm font-semibold text-white">Contact Us</a>
+        </nav>
+        <button id="hamburger" class="rounded-md p-2 text-[#0f2040] md:hidden" aria-label="Open mobile menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="border-t border-slate-200 bg-white px-4 md:hidden">
+        <div class="flex flex-col gap-2 py-4">
+          <a href="index.html" class="rounded px-3 py-2 font-semibold text-slate-700">Home</a>
+          <a href="services.html" class="rounded px-3 py-2 font-semibold text-slate-700">Services</a>
+          <a href="attorneys.html" class="rounded px-3 py-2 font-semibold text-slate-700">Attorneys</a>
+          <a href="about.html" class="rounded px-3 py-2 font-semibold text-slate-700">About</a>
+          <a href="contact.html" class="rounded bg-[#0f2040] px-3 py-2 text-center font-semibold text-white">Contact Us</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative overflow-hidden bg-[#091529] text-white">
+        <div class="absolute inset-0 bg-[url('image2.jpg')] bg-cover bg-center opacity-30"></div>
+        <div class="hero-overlay relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <div class="max-w-3xl fade-in">
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#d4a84b]">Our services</p>
+            <h1 class="text-4xl font-black leading-tight sm:text-5xl">Appraisal services built for precision, trust, and legal clarity.</h1>
+            <p class="mt-6 text-lg text-slate-200">We provide defensible valuations for estates, divorce, private planning, and litigation matters across New York and New Jersey.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="contact.html" class="btn-primary rounded-full bg-[#c8962f] px-7 py-3.5 font-semibold text-white">Schedule a Consultation</a>
+              <a href="attorneys.html" class="rounded-full border border-white/40 px-7 py-3.5 font-semibold text-white hover:bg-white/10">For Attorneys</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-3">
+          <article class="card-hover rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#0f2040]">Estate Appraisals</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Court-ready valuations for probate, inheritance, and estate settlement matters delivered with sensitivity and speed.</p>
+          </article>
+          <article class="card-hover rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#0f2040]">Divorce Appraisals</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Neutral, independent appraisal support for equitable distribution and marital asset evaluations.</p>
+          </article>
+          <article class="card-hover rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#0f2040]">Private Property &amp; Planning</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Clear reports for homeowners, trustees, and advisors seeking dependable valuation insight.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-[#f8fafc] py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
+            <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+              <div class="fade-in">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#c8962f]">What sets us apart</p>
+                <h2 class="mt-3 text-3xl font-black text-[#0f2040]">A polished process from inspection to final report.</h2>
+                <p class="mt-5 text-lg leading-8 text-slate-600">We combine local market expertise, rigorous property analysis, and contemporary reporting so your valuation is credible, concise, and ready for use in high-stakes situations.</p>
+              </div>
+              <div class="rounded-2xl bg-[#0f2040] p-8 text-white">
+                <ul class="space-y-4 text-sm leading-7">
+                  <li>• Detailed property inspection and market data review</li>
+                  <li>• Clear, professional reports with defensible support</li>
+                  <li>• Responsive communication and prompt delivery</li>
+                  <li>• Trusted by attorneys, executors, and private clients</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#091529] py-12 text-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-slate-300 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <p>© <span id="year"></span> Axios Appraisals</p>
+        <p>(917) 345-7227 • j.xir@axiosappraisals.com</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      hamburger?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      document.querySelectorAll('.fade-in').forEach((el, index) => {
+        setTimeout(() => el.classList.add('visible'), 80 * index);
+      });
+    </script>
+  </body>
+</html>
