@@ -299,19 +299,12 @@
 
       <!-- Service visual split -->
       <div class="mb-16 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] fade-in">
-        <div class="relative overflow-hidden rounded-3xl shadow-xl min-h-[320px]">
-          <img
-            src="image2.jpg"
-            alt="Real estate property appraisal inspection — magnifying glass over house model representing detailed property analysis across all five boroughs and counties in New York and New Jersey"
-            class="h-full w-full object-cover"
-          />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#091529]/75 via-[#091529]/35 to-[#091529]/10"></div>
-          <div class="absolute inset-0 flex items-end p-8 text-white">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#d4a84b]">Thorough. Trusted. Certified.</p>
-              <p class="mt-2 max-w-xl text-xl font-bold sm:text-2xl">Every appraisal is conducted with meticulous attention to detail.</p>
-            </div>
+        <div class="rounded-3xl bg-[#091529] p-8 text-white shadow-xl">
+          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+            <svg class="h-6 w-6 text-[#d4a84b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           </div>
+          <p class="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#d4a84b]">Thorough. Trusted. Certified.</p>
+          <p class="mt-2 max-w-xl text-xl font-bold sm:text-2xl">Every appraisal is conducted with meticulous attention to detail and written to be understandable and defensible.</p>
         </div>
         <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#c8962f]">Why clients choose us</p>
@@ -417,12 +410,14 @@
 
         <!-- Image side -->
         <div class="fade-in relative">
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="image3.jpg"
-              alt="Real estate appraisal professional reviewing property documents and market data at a desk across all five boroughs and counties in New York and New Jersey"
-              class="w-full h-[480px] object-cover"
-            />
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-[#f8fafc] p-8">
+            <div class="flex h-[360px] items-center justify-center rounded-2xl bg-gradient-to-br from-[#091529] to-[#1f3a63] p-8 text-center text-white">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#d4a84b]">Part 36 approved</p>
+                <h3 class="mt-3 text-2xl font-black">Clear, defensible appraisal support for sensitive matters.</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-200">We prepare reports that are easy to explain, easy to defend, and tailored to probate, tax, and litigation timelines.</p>
+              </div>
+            </div>
           </div>
           <!-- Floating stat badge -->
           <div class="absolute -bottom-6 -right-4 sm:-right-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 fade-in delay-200">
@@ -586,14 +581,8 @@
   <!-- =============================================
        DIVORCE / ESTATE VISUAL BREAK
   ============================================== -->
-  <section class="relative py-20 overflow-hidden" aria-label="Estate and divorce appraisal services">
-    <div
-      class="absolute inset-0"
-      style="background-image:url('aboutusimage.jpg'); background-size:cover; background-position:center;"
-      role="img"
-      aria-label="Symbolic representation of estate and divorce appraisal scenarios — house with will documents and wedding rings"
-    ></div>
-    <div class="absolute inset-0" style="background:rgba(9,21,41,0.78);"></div>
+  <section class="relative py-20 overflow-hidden" aria-label="Estate and divorce appraisal services" style="background:linear-gradient(135deg,#091529 0%,#0f2040 50%,#16355e 100%);">
+    <div class="absolute inset-0" style="background:rgba(9,21,41,0.72);"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color:#d4a84b;">Sensitive Situations Handled with Care</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight">
@@ -624,8 +613,8 @@
       <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center rounded-3xl border border-gray-200 bg-white p-8 shadow-xl lg:p-12">
         <div>
           <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#c8962f;">Appraisals for Attorneys</p>
-          <h2 class="text-3xl sm:text-4xl font-extrabold mb-4" style="color:#0f2040;">Trusted valuation support for divorce, estate, and litigation matters.</h2>
-          <p class="text-gray-600 leading-relaxed text-lg mb-6">We provide polished, defensible appraisal reports that help clients and legal teams move forward with confidence in sensitive and time-sensitive situations.</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-4" style="color:#0f2040;">Trusted valuation support for divorce, estate, probate, and IRS matters.</h2>
+          <p class="text-gray-600 leading-relaxed text-lg mb-6">We prepare retrospective and current valuation reports for probate administration, date-of-death questions, gift and estate tax filings, IRS compliance, and litigation support. Every report is clear, well-supported, and Part 36 approved.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="attorneys.html" class="btn-primary inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md text-sm font-bold text-white" style="background:#0f2040;">Explore Attorney Services</a>
             <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md text-sm font-bold border-2" style="color:#0f2040; border-color:#0f2040;">Request a Consultation</a>
@@ -633,8 +622,8 @@
         </div>
         <div class="rounded-2xl bg-[#0f2040] p-8 text-white">
           <ul class="space-y-4 text-sm leading-7">
-            <li>• Divorce and marital asset valuation support</li>
             <li>• Estate and probate appraisal reporting</li>
+            <li>• Part 36 approved valuation support</li>
             <li>• Litigation-ready market analysis and documentation</li>
             <li>• Responsive communication and professional delivery</li>
           </ul>
@@ -790,11 +779,7 @@
         <!-- Brand column -->
         <div class="lg:col-span-2">
           <a href="index.html" class="flex items-center gap-3 mb-5" aria-label="Axios Appraisals">
-            <img
-              src="logo.jpg"
-              alt="Axios Appraisals company logo"
-              class="h-12 w-12 rounded-full object-cover"
-            />
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-sm font-black uppercase tracking-[0.25em] text-white">AA</div>
             <div>
               <span class="block text-xl font-extrabold text-white">Axios Appraisals</span>
               <span class="block text-xs tracking-widest uppercase" style="color:#d4a84b;">New York and New Jersey</span>
