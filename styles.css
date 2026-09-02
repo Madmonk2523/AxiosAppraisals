@@ -29,6 +29,14 @@ a { text-decoration: none; }
 .section-divider {
   width: 72px; height: 4px; border-radius: 999px; background: linear-gradient(90deg, var(--navy), var(--gold)); margin: 0 auto;
 }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.form-status {
+  min-height: 1.5rem; margin: 0; font-size: 0.875rem; font-weight: 600; color: var(--navy);
+}
+.form-status.error { color: #b91c1c; }
+.form-status.success { color: #166534; }
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 .delay-100 { transition-delay: .1s; }
