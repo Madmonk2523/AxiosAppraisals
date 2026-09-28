@@ -85,23 +85,23 @@
 
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
-                <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">Name</label>
+                <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">Name (Required)</label>
                 <input id="name" name="name" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="text" placeholder="Your name" maxlength="80" required autocomplete="name" />
               </div>
               <div>
-                <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Email</label>
-                <input id="email" name="email" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="email" placeholder="you@email.com" maxlength="120" required autocomplete="email" />
+                <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Email (Optional)</label>
+                <input id="email" name="email" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="email" placeholder="you@email.com" maxlength="120" autocomplete="email" />
               </div>
             </div>
 
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
-                <label for="phone" class="mb-2 block text-sm font-semibold text-slate-700">Phone</label>
+                <label for="phone" class="mb-2 block text-sm font-semibold text-slate-700">Phone (Required)</label>
                 <input id="phone" name="phone" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="tel" placeholder="(555) 123-4567" maxlength="20" required autocomplete="tel" />
               </div>
               <div>
-                <label for="matter" class="mb-2 block text-sm font-semibold text-slate-700">Matter Type</label>
-                <select id="matter" name="matter" class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" required>
+                <label for="matter" class="mb-2 block text-sm font-semibold text-slate-700">Matter Type (Optional)</label>
+                <select id="matter" name="matter" class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10">
                   <option value="">Select a matter</option>
                   <option>Estate / Probate</option>
                   <option>Divorce / Family Law</option>
@@ -113,8 +113,13 @@
             </div>
 
             <div>
-              <label for="message" class="mb-2 block text-sm font-semibold text-slate-700">How can we help?</label>
-              <textarea id="message" name="message" class="min-h-32 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" placeholder="Share your property type, urgency, and any legal context." maxlength="1200" required></textarea>
+              <label for="address" class="mb-2 block text-sm font-semibold text-slate-700">Home Address (Optional)</label>
+              <input id="address" name="address" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="text" placeholder="Street address, city, state, ZIP" maxlength="200" autocomplete="street-address" />
+            </div>
+
+            <div>
+              <label for="message" class="mb-2 block text-sm font-semibold text-slate-700">How can we help? (Optional)</label>
+              <textarea id="message" name="message" class="min-h-32 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" placeholder="Share your property type, urgency, and any legal context." maxlength="1200"></textarea>
             </div>
 
             <p id="form-status" class="form-status" aria-live="polite"></p>
