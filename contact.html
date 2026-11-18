@@ -77,11 +77,10 @@
             <h2 class="mt-3 text-3xl font-black text-[#0f2040]">Tell us about your matter.</h2>
           </div>
 
-          <form id="contact-form" action="https://formsubmit.co/j.xir@axiosappraisals.com" method="POST" novalidate class="space-y-5">
-            <input type="hidden" name="_captcha" value="false" />
+          <form id="contact-form" action="/api/contact" method="POST" class="space-y-5">
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_subject" value="New Axios Appraisals Inquiry" />
-            <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="_subject" value="[Axios Website Inquiry]" />
+            <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off" />
 
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
@@ -100,14 +99,15 @@
                 <input id="phone" name="phone" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" type="tel" placeholder="(555) 123-4567" maxlength="20" required autocomplete="tel" />
               </div>
               <div>
-                <label for="matter" class="mb-2 block text-sm font-semibold text-slate-700">Matter Type (Optional)</label>
-                <select id="matter" name="matter" class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10">
+                <label for="matter" class="mb-2 block text-sm font-semibold text-slate-700">Matter Type (Required)</label>
+                <select id="matter" name="matter" required class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10">
                   <option value="">Select a matter</option>
                   <option>Estate / Probate</option>
                   <option>Divorce / Family Law</option>
                   <option>IRS / Tax Filing</option>
                   <option>Litigation / Expert Support</option>
                   <option>Private Property</option>
+                  <option>Not sure</option>
                 </select>
               </div>
             </div>
@@ -122,9 +122,12 @@
               <textarea id="message" name="message" class="min-h-32 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" placeholder="Share your property type, urgency, and any legal context." maxlength="1200"></textarea>
             </div>
 
-            <p id="form-status" class="form-status" aria-live="polite"></p>
+            <div id="turnstile-container"></div>
+            <p id="form-status" class="form-status" aria-live="polite">Loading secure form…</p>
+            <p class="text-sm text-slate-600">Prefer to call? <a href="tel:+19173457227" class="font-semibold underline">(917) 345-7227</a>. Please do not include sensitive legal documents or financial account details.</p>
+            <noscript><p>Please enable JavaScript to use this form, or call (917) 345-7227.</p></noscript>
 
-            <button type="submit" class="btn-primary w-full rounded-full bg-[#c8962f] px-6 py-3.5 font-semibold text-white shadow-lg shadow-[#c8962f]/20 transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70">Send Inquiry</button>
+            <button type="submit" disabled class="btn-primary w-full rounded-full bg-[#c8962f] px-6 py-3.5 font-semibold text-white shadow-lg shadow-[#c8962f]/20 transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70">Send Inquiry</button>
           </form>
         </div>
       </section>
@@ -189,55 +192,10 @@
       const mobileMenu = document.getElementById('mobile-menu');
       hamburger?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 
-      const form = document.getElementById('contact-form');
-      const status = document.getElementById('form-status');
-
-      function setStatus(message, type) {
-        status.textContent = message;
-        status.className = 'form-status';
-        if (type) status.classList.add(type);
-      }
-
-      form?.addEventListener('submit', function (event) {
-        const honeypot = form.querySelector('input[name="website"]');
-        const requiredFields = form.querySelectorAll('[required]');
-
-        if (honeypot && honeypot.value.trim() !== '') {
-          event.preventDefault();
-          setStatus('Submission blocked.', 'error');
-          return;
-        }
-
-        let isValid = true;
-
-        requiredFields.forEach((field) => {
-          if (!field.value || !field.value.trim()) {
-            isValid = false;
-            field.setAttribute('aria-invalid', 'true');
-          } else {
-            field.setAttribute('aria-invalid', 'false');
-          }
-        });
-
-        if (!isValid) {
-          event.preventDefault();
-          setStatus('Please complete all required fields before sending.', 'error');
-          return;
-        }
-
-        const emailField = form.querySelector('#email');
-        if (emailField && !emailField.checkValidity()) {
-          event.preventDefault();
-          setStatus('Please enter a valid email address.', 'error');
-          return;
-        }
-
-        setStatus('Sending your inquiry…', 'success');
-      });
-
       document.querySelectorAll('.fade-in').forEach((el, index) => {
         setTimeout(() => el.classList.add('visible'), 90 * index);
       });
     </script>
+    <script src="assets/contact-form.js" defer></script>
   </body>
 </html>
