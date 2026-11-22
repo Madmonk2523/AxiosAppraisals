@@ -78,6 +78,7 @@
           </div>
 
           <form id="contact-form" action="/api/contact" method="POST" class="space-y-5">
+            <input type="hidden" name="_blacklist" value="USD waiting in your account,AI research teams are licensing de-identified business data" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="[Axios Website Inquiry]" />
             <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off" />
@@ -122,6 +123,7 @@
               <textarea id="message" name="message" class="min-h-32 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#0f2040] focus:ring-2 focus:ring-[#0f2040]/10" placeholder="Share your property type, urgency, and any legal context." maxlength="1200"></textarea>
             </div>
 
+            <p class="text-sm text-slate-600">For appraisal inquiries only. Please do not send sales pitches or data-licensing offers.</p>
             <div id="turnstile-container"></div>
             <p id="form-status" class="form-status" aria-live="polite">Loading secure form…</p>
             <p class="text-sm text-slate-600">Prefer to call? <a href="tel:+19173457227" class="font-semibold underline">(917) 345-7227</a>. Please do not include sensitive legal documents or financial account details.</p>
@@ -196,6 +198,7 @@
         setTimeout(() => el.classList.add('visible'), 90 * index);
       });
     </script>
+    <script src="assets/contact-policy.js" defer></script>
     <script src="assets/contact-form.js" defer></script>
   </body>
 </html>

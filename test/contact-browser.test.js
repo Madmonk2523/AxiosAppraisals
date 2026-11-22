@@ -9,7 +9,7 @@ async function boot(config={mode:'formsubmit'},options={}) {
   const button={disabled:true},status={},calls=[];let submit,widgetOptions,resets=0,formResets=0;
   const form={elements,action:'/api/contact',querySelector:()=>button,addEventListener:(name,fn)=>{submit=fn;},reportValidity:()=>options.valid!==false,reset:()=>{formResets++;}};
   const document={getElementById:id=>id==='contact-form'?form:status,createElement:()=>({}),head:{appendChild:script=>{if(options.scriptFail)script.onerror();else script.onload();}}};
-  const window={turnstile:{render:(selector,value)=>{widgetOptions=value;return 'widget';},reset:()=>{resets++;}}};
+  const window={AxiosContactPolicy: options.noPolicy ? undefined : require('../assets/contact-policy'),turnstile:{render:(selector,value)=>{widgetOptions=value;return 'widget';},reset:()=>{resets++;}}};
   const fetch=async(url,init)=>{calls.push({url,init});if(calls.length===1){if(options.configFail)throw Error();return {ok:true,json:async()=>config};}return options.send ? options.send() : {ok:true,json:async()=>({ok:true})};};
   vm.runInNewContext(code,{document,window,fetch,AbortSignal,Error}); await tick();
   return {form,button,status,calls,get widgetOptions(){return widgetOptions;},get resets(){return resets;},get formResets(){return formResets;},submit:async()=>{const event={prevented:false,preventDefault(){this.prevented=true;}};await submit(event);return event;}};
@@ -35,4 +35,20 @@ test('double clicks during an API request send once; expiration removes token',a
 test('invalid fields and honey prevent even fallback submissions',async()=>{
  const app=await boot();app.form.elements._honey.value='spam';assert.equal((await app.submit()).prevented,true);
  const invalid=await boot({mode:'formsubmit'},{valid:false});assert.equal((await invalid.submit()).prevented,true);
+});
+test('observed scam and vendor pitch are visibly rejected before either transport',async()=>{
+ for(const config of [{mode:'formsubmit'},{mode:'protected',siteKey:'key',action:'axios_inquiry'}]) {
+  for(const message of ['4k USD waiting in your account. LOGIN ->','AI research teams are licensing de-identified business data']) {
+   const app=await boot(config);app.form.elements.message.value=message;
+   if(app.widgetOptions)app.widgetOptions.callback('token');
+   assert.equal((await app.submit()).prevented,true);assert.equal(app.calls.length,1);
+   assert.match(app.status.textContent,/appraisal inquiries only/);assert.equal(app.formResets,0);
+   app.form.elements.message.value='I need an estate appraisal. Documents: https://example.com/estate';
+   const retry=await app.submit();assert.equal(retry.prevented,config.mode!=='formsubmit');
+   assert.equal(app.calls.length,config.mode==='formsubmit'?1:2);
+  }
+ }
+});
+test('missing content-policy script fails safely with phone alternative',async()=>{
+ const app=await boot({mode:'formsubmit'},{noPolicy:true});assert.equal((await app.submit()).prevented,true);assert.match(app.status.textContent,/917/);assert.equal(app.calls.length,1);
 });

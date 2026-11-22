@@ -11,6 +11,11 @@
     if (busy) { event.preventDefault(); return; }
     if (!mode) { say('The form is unavailable. Please call (917) 345-7227.'); return; }
     if (form.elements._honey.value || !form.reportValidity()) { event.preventDefault(); return; }
+    const fields = Object.fromEntries(['name','email','phone','matter','address','message'].map(key => [key, form.elements[key].value]));
+    if (!window.AxiosContactPolicy) { event.preventDefault(); say('The form is unavailable. Please call (917) 345-7227.'); return; }
+    if (window.AxiosContactPolicy.hasBlockedContent(fields)) {
+      event.preventDefault(); say('This form is for appraisal inquiries only. Please remove promotional content or call (917) 345-7227 for appraisal assistance.'); return;
+    }
     if (mode === 'formsubmit') {
       form.elements._subject.value = `[Axios Website Inquiry] ${form.elements.matter.value}`;
       say('Continue to the verification page to send your inquiry.', 'success');

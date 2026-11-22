@@ -41,3 +41,39 @@ After verified protected-mode deployment, deactivate the old FormSubmit endpoint
 - Turnstile server verification/action/hostname/replay: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 - Upstash REST commands: https://upstash.com/docs/redis/features/restapi
 - Resend sender and email API: https://resend.com/docs/api-reference/emails/send-email
+
+## Targeted solicitation filter (November 22, 2026)
+
+The contact page now includes FormSubmit's documented `_blacklist` with two narrow
+phrases from the observed unsolicited submissions: `USD waiting in your account`
+and `AI research teams are licensing de-identified business data`. It does not
+block general links, payment/settlement language, research, or appraisal data.
+The browser gives a visible correction/phone message instead of knowingly sending
+matching content to a service that may silently discard it. The same shared policy
+rejects matching content in the optional protected API before provider calls.
+The HTML field and shared policy are kept in sync by a test. CAPTCHA, honeypot,
+required matter/phone, optional fields, destination, and provider selection remain
+unchanged. No new accounts or environment settings are needed for this patch.
+
+Limits: this is a targeted content filter, not comprehensive spam prevention.
+FormSubmit settings are submitted with the form; a direct caller can omit or alter
+`_blacklist` or use another still-active endpoint. Browser checks can be bypassed.
+Protected API rules apply only if that mode is provisioned and enabled. No live
+mail, provider rejection, or inbox delivery has been tested as part of this patch;
+all automated sends use mocks. The existing vendor endpoint has not been retired.
+Mailbox rules and retirement require separate follow-up, not this code patch.
+
+Evidence chronology: the first screenshot's submission timestamp is November 18,
+2026 at 00:16 UTC, before the prior hardening deployment at 21:12 UTC that day.
+It shows a populated legacy `website` field and blank matter. The second image
+shows a data-licensing solicitation, but does not establish whether it predates the
+hardening. Neither screenshot proves the submitting route or that FormSubmit sold
+any data. No suspicious links were visited or included in test fixtures.
+
+Primary references reviewed: https://formsubmit.co/documentation (`_blacklist`,
+default CAPTCHA, `_honey`) and https://formsubmit.co/help (vendor deactivation).
+Run the existing `node --test test/*.test.js` suite, plus `node --check
+assets/contact-policy.js`. Regression tests cover the observed phrases, normalized
+matching, legacy-field content, legitimate legal inquiries and URLs, visible
+browser rejection/retry, unchanged configuration, and absence of provider calls
+for rejected requests. This does not certify FormSubmit's own matching behavior.

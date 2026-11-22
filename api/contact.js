@@ -1,5 +1,6 @@
 const { createHmac, randomUUID } = require('node:crypto');
 const { isIP } = require('node:net');
+const { hasBlockedContent } = require('../assets/contact-policy');
 const MAX_BYTES = 8192;
 const MATTERS = ['Estate / Probate', 'Divorce / Family Law', 'IRS / Tax Filing', 'Litigation / Expert Support', 'Private Property', 'Not sure'];
 const RECIPIENT = 'j.xir@axiosappraisals.com';
@@ -31,6 +32,7 @@ function validate(body) {
   }
   if (!result.name || !MATTERS.includes(result.matter) || !/^[+()\d .-]+$/.test(result.phone) || result.phone.replace(/\D/g,'').length < 7 || result.phone.replace(/\D/g,'').length > 15) throw Error('validation');
   if (result.email && !/^[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+$/.test(result.email)) throw Error('validation');
+  if (hasBlockedContent(body)) throw Error('validation');
   if (result._honey || !result.token) throw Error('validation');
   return result;
 }

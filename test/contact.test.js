@@ -79,3 +79,21 @@ test('provider failure does not report success or leak provider secrets',async()
 test('optional email omitted, body cannot override recipient or subject',async()=>{
   const r=await invoke({body:{...body,email:'',to:'attacker@example.com',subject:'bad'}});assert.equal(r.code,200);const mail=r.calls.at(-1).data;assert.equal(mail.reply_to,undefined);assert.deepEqual(mail.to,['j.xir@axiosappraisals.com']);assert.notEqual(mail.subject,'bad');
 });
+test('protected endpoint rejects observed phrases before contacting any provider',async()=>{
+ for(const change of [
+  {message:'4k USD waiting in your account. LOGIN ->'},
+  {message:'AI research teams are licensing de-identified business data'},
+  {message:'AI RESEARCH TEAMS ARE LICENSING\nDE-IDENTIFIED BUSINESS DATA'},
+  {website:'4k USD waiting in your account. LOGIN ->'}
+ ]) {const r=await invoke({body:{...body,...change}});assert.equal(r.code,400);assert.equal(r.calls.length,0);}
+});
+test('ordinary legal, valuation, data and payment terminology is not blacklisted',async()=>{
+ for(const message of [
+  'Estate appraisal needed for probate; the account is waiting for a valuation.',
+  'Divorce case: I have appraisal data and a settlement payout question.',
+  'Please review tax filing records. Property documents: https://example.com/files',
+  'I am an attorney licensing office space. I need a private property appraisal.',
+  'Litigation expert support needed. We have business data and research from counsel.',
+  ''
+ ]) {const r=await invoke({body:{...body,message,email:''}});assert.equal(r.code,200);assert.equal(r.calls.length,4);}
+});
