@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Axios Appraisals | Certified Real Estate Appraiser in NY & NJ</title>
-  <meta name="description" content="Axios Appraisals provides certified real estate appraisals across New York and New Jersey, including estate, divorce, private, and mortgage appraisals." />
-  <meta name="keywords" content="real estate appraiser New York New Jersey, property appraisal across five boroughs, estate appraisal NYC, divorce appraisal New Jersey, certified appraiser New York" />
+  <title>Real Estate Appraiser in Queens, NYC &amp; NJ | Axios Appraisals</title>
+  <meta name="description" content="Queens-based real estate appraisals for estate, probate, divorce, private property and mortgage needs in New York and New Jersey. Request a consultation." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Axios Appraisals | Certified Real Estate Appraiser in NY & NJ" />
-  <meta property="og:description" content="Axios Appraisals provides certified real estate appraisals across New York and New Jersey, including estate, divorce, private, and mortgage appraisals." />
+  <meta property="og:title" content="Real Estate Appraiser in Queens, NYC &amp; NJ | Axios Appraisals" />
+  <meta property="og:description" content="Queens-based real estate appraisals for estate, probate, divorce, private property and mortgage needs in New York and New Jersey. Request a consultation." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://axiosappraisals.com/" />
 
@@ -17,6 +16,10 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://axiosappraisals.com/#business",
+    "logo": "https://axiosappraisals.com/logo.png",
+    "image": "https://axiosappraisals.com/logo.png",
+    "email": "j.xir@axiosappraisals.com",
     "name": "Axios Appraisals",
     "url": "https://axiosappraisals.com/",
     "telephone": "+1-917-345-7227",
@@ -159,10 +162,13 @@
       max-height: 0;
       overflow: hidden;
       opacity: 0;
+      visibility: hidden;
     }
     #mobile-menu.open {
-      max-height: 400px;
+      max-height: calc(100dvh - 5rem);
+      overflow-y: auto;
       opacity: 1;
+      visibility: visible;
     }
 
     /* CTA button pulse */
@@ -180,6 +186,8 @@
     }
     .btn-primary:hover::after { opacity: 1; }
 
+    #services { scroll-margin-top: 6rem; }
+
     /* Section divider */
     .section-divider {
       width: 60px;
@@ -188,7 +196,11 @@
       border-radius: 2px;
     }
   </style>
-</head>
+    <meta property="og:url" content="https://axiosappraisals.com/" />
+      <meta property="og:image" content="https://axiosappraisals.com/logo.png" />
+      <meta property="og:site_name" content="Axios Appraisals" />
+  <noscript><style>.fade-in { opacity: 1 !important; transform: none !important; }</style></noscript>
+  </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
 
@@ -198,20 +210,20 @@
   <header id="header" class="sticky top-0 z-50 border-b border-slate-200 bg-[#f2f2f0]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-3 group" aria-label="Axios Appraisals Home">
+        <a href="/" class="flex items-center gap-3 group" aria-label="Axios Appraisals Home">
           <img src="logo.png" alt="Axios Appraisals logo" class="h-20 w-auto object-contain" />
         </a>
         <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
-          <a href="index.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Home</a>
+          <a href="/" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Home</a>
           <details class="group relative">
             <summary class="nav-link flex cursor-pointer list-none items-center gap-1 text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Services <svg class="h-3.5 w-3.5 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg></summary>
             <div class="absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
               <a href="lenders.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Mortgage Appraisals <span class="block pt-1 text-xs font-normal text-slate-500">For lenders</span></a>
               <a href="homeowners.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Private Appraisals <span class="block pt-1 text-xs font-normal text-slate-500">For homeowners</span></a>
-              <a href="attorneys.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Divorce &amp; Estate Appraisals <span class="block pt-1 text-xs font-normal text-slate-500">For attorneys</span></a>
+              <a href="estate-appraisals.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Estate &amp; Probate Appraisals</a><a href="divorce-appraisals.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Divorce Appraisals</a><a href="attorneys.html" class="block rounded-lg px-4 py-3 text-sm font-semibold text-[#0f2040] hover:bg-slate-50">Appraisals for Attorneys</a>
             </div>
           </details>
-          <a href="about.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">About</a>
+          <a href="service-areas.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">Areas We Serve</a><a href="about.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-[#0f2040]">About</a>
           <a href="contact.html" class="btn-primary rounded-full bg-[#0f2040] px-5 py-2.5 text-sm font-semibold text-white">Contact Us</a>
         </nav>
         <button id="hamburger" class="md:hidden rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-navy-600" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -226,12 +238,12 @@
     </div>
     <div id="mobile-menu" class="md:hidden border-t border-gray-100 bg-white px-4" role="navigation" aria-label="Mobile navigation">
       <div class="flex flex-col gap-2 py-4">
-        <a href="index.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Home</a>
+        <a href="/" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Home</a>
         <p class="px-3 pt-2 text-xs font-bold uppercase tracking-[0.2em] text-[#c8962f]">Services</p>
         <a href="lenders.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Mortgage Appraisals for Lenders</a>
         <a href="homeowners.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Private Appraisals for Homeowners</a>
-        <a href="attorneys.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Divorce &amp; Estate Appraisals for Attorneys</a>
-        <a href="about.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">About</a>
+        <a href="estate-appraisals.html" class="mobile-nav-link rounded px-3 py-2 font-semibold text-slate-700">Estate &amp; Probate Appraisals</a><a href="divorce-appraisals.html" class="mobile-nav-link rounded px-3 py-2 font-semibold text-slate-700">Divorce Appraisals</a><a href="attorneys.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">Appraisals for Attorneys</a>
+        <a href="service-areas.html" class="mobile-nav-link rounded px-3 py-2 font-semibold text-slate-700">Areas We Serve</a><a href="about.html" class="mobile-nav-link rounded px-3 py-2 text-base font-semibold text-slate-700 hover:bg-gray-50 hover:text-[#0f2040]">About</a>
         <a href="contact.html" class="mobile-nav-link rounded bg-[#0f2040] px-3 py-2 text-center text-base font-semibold text-white">Contact Us</a>
       </div>
     </div>
@@ -256,11 +268,11 @@
       <h1 class="fade-in delay-100 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6" style="text-shadow:0 2px 20px rgba(0,0,0,0.5);">
         Accurate &amp; Certified<br class="hidden sm:block" />
         <span style="color:#d4a84b;">Real Estate Appraisals</span><br class="hidden sm:block" />
-        across all five boroughs and counties in New York and New Jersey
+        in New York and New Jersey
       </h1>
 
       <p class="fade-in delay-200 text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Trusted valuations for estates, divorce, and private property needs — delivered with precision and professionalism by a certified local expert.
+        Based in Queens and serving all five New York City boroughs, Axios Appraisals provides independent valuations for estate, probate, divorce, and private property needs. Contact us about your property in New York or New Jersey.
       </p>
 
       <div class="fade-in delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -332,7 +344,7 @@
       <div id="audience" class="mb-16 fade-in">
         <div class="mx-auto max-w-3xl text-center">
           <p class="text-sm font-semibold uppercase tracking-widest text-[#c8962f]">Start with your need</p>
-          <h2 class="mt-3 text-3xl font-extrabold text-[#0f2040] sm:text-4xl">A focused appraisal experience, from the first conversation.</h2>
+          <h2 class="mt-3 text-3xl font-extrabold text-[#0f2040] sm:text-4xl">Real estate appraisal services for your next decision.</h2>
           <p class="mt-5 text-lg leading-8 text-slate-600">Choose the path that fits your property question. Every engagement receives thoughtful analysis, clear communication, and a report built for its purpose.</p>
         </div>
 
@@ -380,6 +392,18 @@
           </a>
         </div>
       </div>
+
+      <div class="grid gap-6 border-t border-slate-200 pt-10 md:grid-cols-2">
+        <article>
+          <h3 class="text-xl font-bold text-[#0f2040]"><a href="estate-appraisals.html" class="underline decoration-[#c8962f] underline-offset-4">Estate &amp; probate appraisals</a></h3>
+          <p class="mt-3 leading-7 text-slate-600">Property valuations for estate administration, probate and date-of-death needs. Learn what to provide and how the valuation date shapes the assignment.</p>
+        </article>
+        <article>
+          <h3 class="text-xl font-bold text-[#0f2040]"><a href="divorce-appraisals.html" class="underline decoration-[#c8962f] underline-offset-4">Divorce appraisals</a></h3>
+          <p class="mt-3 leading-7 text-slate-600">An independent opinion of real estate value for property division and discussions with counsel. Review the process and information needed to get started.</p>
+        </article>
+      </div>
+      <p class="mt-8 leading-7 text-slate-600">Our Queens office serves properties in Queens, Brooklyn, Manhattan, the Bronx and Staten Island. <a href="service-areas.html" class="font-semibold text-[#0f2040] underline underline-offset-4">View our appraisal service areas</a> and ask about coverage elsewhere in New York and New Jersey.</p>
 
     </div>
   </section>
@@ -718,7 +742,7 @@
 
         <!-- Brand column -->
         <div class="lg:col-span-2">
-          <a href="index.html" class="flex items-center gap-3 mb-5" aria-label="Axios Appraisals">
+          <a href="/" class="flex items-center gap-3 mb-5" aria-label="Axios Appraisals">
             <img src="logo.png" alt="Axios Appraisals logo" class="h-12 w-auto object-contain" />
             <div>
               <span class="block text-xl font-extrabold text-white">Axios Appraisals</span>
@@ -760,8 +784,11 @@
           <ul class="space-y-3 text-sm text-white/60">
             <li><a href="lenders.html" class="hover:text-white transition-colors">Mortgage Appraisals for Lenders</a></li>
             <li><a href="homeowners.html" class="hover:text-white transition-colors">Private Appraisals for Homeowners</a></li>
-            <li><a href="attorneys.html" class="hover:text-white transition-colors">Divorce &amp; Estate Appraisals for Attorneys</a></li>
-          </ul>
+            <li><a href="estate-appraisals.html" class="hover:text-white transition-colors">Estate &amp; Probate Appraisals</a></li>
+              <li><a href="divorce-appraisals.html" class="hover:text-white transition-colors">Divorce Appraisals</a></li>
+              <li><a href="attorneys.html" class="hover:text-white transition-colors">Appraisals for Attorneys</a></li>
+            <li><a href="service-areas.html" class="hover:text-white transition-colors">Areas We Serve</a></li>
+            </ul>
         </div>
 
         <!-- Contact + Hours column -->

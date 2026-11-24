@@ -42,5 +42,10 @@ a { text-decoration: none; }
 .delay-100 { transition-delay: .1s; }
 .delay-200 { transition-delay: .2s; }
 .delay-300 { transition-delay: .3s; }
-#mobile-menu { transition: max-height .3s ease, opacity .3s ease; max-height: 0; opacity: 0; overflow: hidden; }
-#mobile-menu.open { max-height: 420px; opacity: 1; }
+#mobile-menu { transition: max-height .3s ease, opacity .3s ease; max-height: 0; opacity: 0; overflow: hidden; visibility: hidden; }
+#mobile-menu.open { max-height: calc(100dvh - 5rem); opacity: 1; overflow-y: auto; visibility: visible; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { opacity: 1; transform: none; transition: none; }
+}
